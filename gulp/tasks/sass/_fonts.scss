@@ -1,0 +1,14 @@
+@mixin font($name) {
+  src: url('<%= fontsPath %>/#{$name}/#{$name}.woff2') format('woff2'), url('<%= fontsPath %>/#{$name}/#{$name}.woff') format('woff');
+  text-rendering: optimizeLegibility;
+  font-display: block;
+}
+
+<% _.each(fonts, function(font) { %>
+  @font-face {
+    font-family: '<%= font.name %>';
+    @include font('<%= font.subname %>');
+    font-weight: <%= font.weight %>;
+    font-style: normal;
+  }
+<% }); %>

@@ -1,0 +1,7 @@
+{% set  list = [
+    {
+        url: 'home.html',
+        title: 'Главная'
+    }
+]
+%}

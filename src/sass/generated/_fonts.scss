@@ -1,0 +1,13 @@
+@mixin font($name) {
+  src: url('../fonts/#{$name}/#{$name}.woff2') format('woff2'), url('../fonts/#{$name}/#{$name}.woff') format('woff');
+  text-rendering: optimizeLegibility;
+  font-display: block;
+}
+
+
+  @font-face {
+    font-family: 'Roboto';
+    @include font('Roboto-Medium');
+    font-weight: 500;
+    font-style: normal;
+  }

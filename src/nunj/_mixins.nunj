@@ -1,0 +1,7 @@
+{% macro icon(i, style) %}
+    <svg {% if style %}style="{{ style }}"{% endif %} class="icon icon-{{i}}"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro picon(i) %}
+    <span class="picon picon-{{ i }}"></span>
+{% endmacro %}

@@ -1,0 +1,44 @@
+{% import "../_mixins.nunj" as mixins %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    {# Stylesheets #}
+
+    {{ css_include('assets/css/vendors.min.css') | safe }}
+    {{ css_include('assets/css/app.css') | safe }}
+    {{ js_include('assets/js/modernizr.js') | safe }}
+
+    {# Tab color #}
+    <meta name="theme-color" content="#252a37">
+    <meta name="msapplication-navbutton-color" content="#252a37">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#252a37">
+    {# END Tab color #}
+
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="l-body">
+    {% block content %}{% endblock %}
+</div>
+
+{# Javascript #}
+{{ js_include('assets/js/vendors.min.js') | safe }}
+{{ js_include('assets/js/helpers.js') | safe }}
+{{ js_include('assets/js/app.js') | safe }}
+{% block scripts %}{% endblock %}
+</body>
+</html>
